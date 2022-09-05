@@ -50,19 +50,26 @@ export const TransactionTypeContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
+`;
 
-  button {
+interface RadioBoxProps {
+  isActive: boolean;
+}
+
+export const RadioBox = styled.button<RadioBoxProps>`
     height: 4rem;
     border: 0;
     border-radius: 0.25rem;
 
-    background: #484A51;
+    background: ${(props) => props.isActive ? '#484A60' : '#484A51'};
+    /* background: #484A51; */
 
     display: flex;
     align-items: center;
     justify-content: center;
     
     transition: filter 0.2s;
+
     &:hover {
       filter: brightness(0.9);
     }
@@ -78,5 +85,4 @@ export const TransactionTypeContainer = styled.div`
       font-size: 1rem;
       color: var(--text-title);
     }
-  }
-`;
+`
